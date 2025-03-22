@@ -1,0 +1,116 @@
+/* Fondo con paisaje */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(to top, #77dd77 40%, #87ceeb 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Contenedor principal */
+.contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* Botón centrado */
+.boton-generar {
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.boton-generar:hover {
+    transform: scale(1.1);
+}
+
+/* Contenedor de flores */
+.contenedor-flores {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+/* Estilos del reproductor de Spotify */
+#spotify-player {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .boton-generar {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    #spotify-player {
+        width: 250px;
+        height: 70px;
+    }
+}
+
+/* Estilo de la flor */
+.flor {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    animation: aparecer 0.5s ease-in-out;
+}
+
+/* Pétalos */
+.petalo {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background: radial-gradient(circle, yellow 30%, orange 90%);
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Posiciones de los pétalos */
+.petalo:nth-child(1) { transform: rotate(0deg) translateY(-25px); }
+.petalo:nth-child(2) { transform: rotate(45deg) translateY(-25px); }
+.petalo:nth-child(3) { transform: rotate(90deg) translateY(-25px); }
+.petalo:nth-child(4) { transform: rotate(135deg) translateY(-25px); }
+.petalo:nth-child(5) { transform: rotate(180deg) translateY(-25px); }
+
+/* Centro de la flor */
+.centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffd700;
+    border: 3px solid #ffcc00;
+    border-radius: 50%;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de aparición */
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
